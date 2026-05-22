@@ -24,7 +24,11 @@ async function searchRecipes() {
         filtered.forEach(recipe => {
             const div = document.createElement("div");
             div.className = "recipe-card";
-            div.textContent = recipe.name;
+            div.innerHTML = `
+                <h2>${recipe.name}</h2>
+                <img src="${recipe.image}" alt="${recipe.name}" width="300">
+                <p>${recipe.description}</p>
+            ;
             container.appendChild(div);
         });
 
